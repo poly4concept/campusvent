@@ -1,0 +1,32 @@
+import React from 'react'
+import './feed.css'
+import EventImg from './Artboard 2.png'
+import { FiSearch } from "react-icons/fi";
+import { GoSettings } from "react-icons/go";
+import { IoMdNotificationsOutline } from "react-icons/io";
+import EventCard from '../eventCard';
+
+const Feed = () => {
+    return (
+        <div className='feed'>
+            <div className='feed-header'>
+                <div className='search'>
+                    <FiSearch className="search-icon"/>
+                    <input type="text" placeholder="Search events"/>
+                </div>
+                <GoSettings className='settings-icon' />
+                <IoMdNotificationsOutline className='notification-icon'/>
+            </div>
+            <div className='feed-options' >
+                <div >All</div>
+                <div className='active' >For You</div>
+                <div >Following</div>
+            </div>
+            {/* <div className='events-div'>                
+                <EventCard img={EventImg}/>
+            </div> */}
+        </div>
+    )
+
+}
+export default Feed

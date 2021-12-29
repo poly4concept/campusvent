@@ -1,0 +1,16 @@
+.button{
+    background-color: var(--orange);
+    color: white;
+    min-width: 150px;
+    border-radius: 20px;
+    padding: 10px 8px;
+    text-align: center;
+    font-weight: 500;
+    font-size: large;
+    cursor: pointer;
+}
+.button:hover{
+    color: var(--orange);
+    background-color: white;
+    border: 1px solid var(--orange);
+}

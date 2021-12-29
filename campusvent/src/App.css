@@ -1,0 +1,15 @@
+.App {
+  display: flex;
+  max-width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (max-width: 1200px) {
+  .App{
+    margin-left: 0;
+  }
+}
+body{
+  --orange: #df861d;
+  --black: #3d3b3b;
+}
