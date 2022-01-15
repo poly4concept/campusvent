@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 .App {
   display: flex;
   max-width: 1250px;
   margin-left: auto;
   margin-right: auto;
+  font-family: 'Open Sans', sans-serif;
 }
 @media screen and (max-width: 1200px) {
   .App{
@@ -12,4 +15,6 @@
 body{
   --orange: #df861d;
   --black: #3d3b3b;
+  --small-black: #6d6969;
+  --pink: #eb4283;
 }
