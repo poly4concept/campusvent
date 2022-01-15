@@ -7,3 +7,9 @@
     align-items: center;
 }
 
+/* medium screen */
+@media screen and (max-width: 1200px) {
+    .events-container{
+        width: 92%;
+    }
+}

@@ -5,7 +5,6 @@
     align-items: center;
     height: 100vh;
     overflow-y : hidden;
-    border-right: 1px solid gray;
 }
 .logo{
     width: 80%;
@@ -43,7 +42,7 @@
 }
 
 .nav-item:hover {
-  background: rgba(128, 128, 128, 0.212);
+  background: var(--background-black);
 }
 .nav-item:hover .nav-icon{
     color: var(--orange);
@@ -130,7 +129,7 @@ img.profile-img {
 
 
 
-/*testing*/
+/*medium screen*/
 
 @media screen and (max-width: 1200px) {
   .sidebar{

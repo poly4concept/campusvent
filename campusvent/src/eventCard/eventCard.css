@@ -2,10 +2,11 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    padding: 18px ;
-    height: 7rem;
+    padding: 10px 15px;
+    height: auto;
     margin: 0.5rem 0;
 }
 .event-card .event-img{

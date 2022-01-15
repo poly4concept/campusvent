@@ -3,6 +3,7 @@
 .App {
   display: flex;
   max-width: 1250px;
+  min-width: 90%;
   margin-left: auto;
   margin-right: auto;
   font-family: 'Open Sans', sans-serif;
@@ -17,4 +18,5 @@ body{
   --black: #3d3b3b;
   --small-black: #6d6969;
   --pink: #eb4283;
+  --background-black: #f7f9f9;
 }

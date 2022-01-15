@@ -1,6 +1,7 @@
 .feed{
-    flex: 0.5;
+    flex: 0.55;
     border-right: 1px solid var(--black);
+    border-left: 1px solid var(--black);
 }
 .feed-header{
     display: flex;
@@ -55,4 +56,14 @@
 .events-div{   
     width: 100%;
     margin: 2rem 0;
+}
+
+
+
+
+/* medium screen */
+@media screen and (max-width: 1200px) {
+    .feed{
+        flex: 0.5;
+    }
 }
