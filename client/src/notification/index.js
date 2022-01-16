@@ -19,8 +19,8 @@ const Notification = () => {
                         <p>120 people attending</p>
                     </div>
                     <div className='popular-event'>
-                        <h6>1. NextJs, The modern React framework</h6>
-                        <p>286 people attending</p>
+                        <h6>3. Architecture of top-performing application</h6>
+                        <p>250 people attending</p>
                     </div>
                     <a href='seemore' className='see-more'>See more</a>
                 </div>
