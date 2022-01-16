@@ -1,5 +1,5 @@
 import { FETCH_ALL } from '../constants/actionTypes';
-import { fetchEvents, createEvents } from '../api/index'
+import { fetchEvents } from '../api/index'
 
 export const getEvents = () => async (dispatch) => {
     try {

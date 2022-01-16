@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 import { FiSearch } from "react-icons/fi";
 import { GoSettings } from "react-icons/go";
 import { IoMdNotificationsOutline } from "react-icons/io";
-import EventCard from '../eventCard';
 import Events from '../events';
 
 const Feed = () => {

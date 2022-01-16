@@ -1,7 +1,6 @@
 import React from 'react'
 import { MdOpenInNew } from "react-icons/md";
 import { BsBookmark } from "react-icons/bs";
-import EventImg from './Artboard 2.png'
 import './eventCard.css' 
 
 const EventCard = ({item}) => {
