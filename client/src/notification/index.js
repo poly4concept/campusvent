@@ -22,7 +22,7 @@ const Notification = () => {
                         <h6>1. NextJs, The modern React framework</h6>
                         <p>286 people attending</p>
                     </div>
-                    <a href=''>See more</a>
+                    <a href='seemore' className='see-more'>See more</a>
                 </div>
 
                 <div className='organizer-box'>
@@ -43,6 +43,7 @@ const Notification = () => {
                             <button>Follow</button>
                         </div>
                     </div>
+                    <a href='seemore' className='see-more'>See more</a>
                 </div>
             </div>
         </div>

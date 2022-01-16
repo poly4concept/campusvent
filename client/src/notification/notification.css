@@ -27,7 +27,8 @@
     font-size: 12px;
     margin-top: -20px;
 }
-.popular-box a{
+ .see-more{
+     margin-top: 10px;
     font-size: 15px;
     text-decoration: none;
     color: var(--orange);
@@ -38,6 +39,7 @@
 
 
 .organizer-box{
+    margin-left: 20px;
     padding: 15px !important;
     border-radius: 20px;
     width: auto;

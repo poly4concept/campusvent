@@ -11,7 +11,7 @@ import { HiPencil } from "react-icons/hi";
 const Sidebar = () => {
     return (
         <div className='sidebar'>
-            <a href="#home" className='logo' >CampusVent</a>
+            <a href="#home" className='logo' >campus<span>vent</span></a>
             <nav className='nav-options'>
                 <ul class="navbar">
                     <li className="nav-item">

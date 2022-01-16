@@ -11,6 +11,11 @@
     margin: 2rem 0;
     text-decoration: none;
     color: black;
+    font-weight: 700;
+    font-size: larger;
+}
+.logo span{
+  color: var(--orange);
 }
 .nav-options{
     display: flex;
@@ -135,7 +140,7 @@ img.profile-img {
   .sidebar{
     align-items: flex-start;
   }
-  .logo{
+  .logo {
     align-self: center;
   }
   .nav-options {

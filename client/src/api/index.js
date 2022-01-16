@@ -1,4 +1,4 @@
 const axios = require('axios');
-const url = 'http://localhost:5000/events'
+const url = 'https://campusvent.herokuapp.com/events'
 
 export const fetchEvents =  () =>  axios.get(url)
