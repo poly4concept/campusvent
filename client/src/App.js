@@ -1,10 +1,18 @@
 import './App.css';
-import React, {useEffect} from 'react'
-import Sidebar from './sidebar';
-import Feed from './feed';
-import Notification from './notification';
+import React, { useEffect, Suspense } from 'react'
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { getEvents } from './actions/events';
+import Loading from './Components/loading'
+
+
+//pages
+const HomePage = React.lazy(() => import('./pages/HomePage'))
+const CreatePage = React.lazy(() => import('./pages/createEvent'))
 
 function App() {
   const dispatch = useDispatch()
@@ -15,9 +23,14 @@ function App() {
 
   return (
     <div className="App">
-      <Sidebar />
-      <Feed />
-      <Notification/>
+      <Suspense  fallback={<Loading/>}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="create" element={<CreatePage />} />
+          </Routes>
+        </BrowserRouter>
+      </Suspense>
     </div>
   );
 }

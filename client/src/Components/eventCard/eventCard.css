@@ -55,11 +55,17 @@
     color: var(--black);
     padding: 0;
 }
+.bookmark-container{
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
 .event-card .event-extras .icons .icon{
     margin-left: 12px;
     font-size: 18px;
     cursor: pointer;
 }
+
 .event-card .event-extras .event-time{
     font-size: 13px;
     color: var(--small-black);

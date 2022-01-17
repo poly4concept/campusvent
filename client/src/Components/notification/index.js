@@ -1,7 +1,7 @@
 import React from 'react'
 import './notification.css'
-import Organizer1 from '../assets/Member_10.png'
-import Organizer2 from '../assets/Member_8.png'
+import Organizer1 from '../../assets/Member_10.png'
+import Organizer2 from '../../assets/Member_8.png'
 
 const Notification = () => {
     return (

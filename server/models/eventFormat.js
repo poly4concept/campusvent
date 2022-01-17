@@ -7,7 +7,8 @@ const eventSchema = mongoose.Schema({
     eventDate: Date,
     eventTime: Number,
     ticketPrice: Number,
-    eventImage: String
+    eventImage: String,
+    bookmarked: false
 }, {
      timestamps: true
 }
