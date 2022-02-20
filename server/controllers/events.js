@@ -1,12 +1,26 @@
 import eventFormat from "../models/eventFormat.js"
 import mongoose from 'mongoose'
 
-export const getEvents = async (req, res) => {
-        try {
+export const getEvents = async (req, res, next) => {
+    try {
+            const filters = req.query
             const events = await eventFormat.find()
-            res.status(200).json(events)
+            
+            if (filters.length > 0) {
+                console.log(filters);
+                const filteredEvents = events.filter(event => {
+                    for (const key in filters) {
+                        events.key = filters[key]
+                    }
+                })
+                res.status(200).json(filteredEvents)
+            }              
+                res.status(200).json(events)
+            
+
+                
         } catch (error) {
-            res.status(404).json(error)
+                res.status(404).json(error)
         }
 }
 

@@ -6,13 +6,16 @@
     height: 100vh;
     overflow-y : hidden;
 }
+.nav-logo{
+  width: 80%;
+  margin: 2rem 0;
+  font-weight: 700;
+  font-size: larger;
+}
 .logo{
-    width: 80%;
-    margin: 2rem 0;
     text-decoration: none;
     color: black;
-    font-weight: 700;
-    font-size: larger;
+    background-color: blue;
 }
 .logo span{
   color: var(--orange);

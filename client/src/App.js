@@ -13,6 +13,7 @@ import Loading from './Components/loading'
 //pages
 const HomePage = React.lazy(() => import('./pages/HomePage'))
 const CreatePage = React.lazy(() => import('./pages/createEvent'))
+const AuthPage = React.lazy(() => import('./pages/Auth'))
 
 function App() {
   const dispatch = useDispatch()
@@ -26,7 +27,8 @@ function App() {
       <Suspense  fallback={<Loading/>}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<AuthPage/>} />
+            <Route path="/home" element={<HomePage />} />
             <Route path="create" element={<CreatePage />} />
           </Routes>
         </BrowserRouter>

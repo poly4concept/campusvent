@@ -27,7 +27,7 @@ const EventCard = ({ item }) => {
                             dispatch(bookmark(item._id),
                             )
                         }} >          
-                        {bookmarked ? <BsFillBookmarkFill className='icon' color='#df861d'/> : <BsBookmark color='icon' className='icon' /> }
+                        {bookmarked ? <BsFillBookmarkFill className='bookmark' color='#df861d'/> : <BsBookmark  className='bookmark' /> }
                     </div>
                 </div>
                 <p className='event-time'> {eventTime}am</p>

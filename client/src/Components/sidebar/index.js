@@ -1,38 +1,39 @@
 import React from 'react'
 import './sidebar.css'
-import ProfilePic from './poly4 logo.png'
 import { FaHome } from "react-icons/fa"; 
 import { BsFillBookmarkPlusFill } from "react-icons/bs"; 
 import { HiOutlineTicket } from "react-icons/hi"; 
 import { CgMoreO, CgMoreAlt } from "react-icons/cg";
 import { HiPencil } from "react-icons/hi";
+import { Link } from 'react-router-dom';
+import ProfilePic from './poly4 logo.png'
 
 
 const Sidebar = () => {
     return (
         <div className='sidebar'>
-            <a href="#home" className='logo' >campus<span>vent</span></a>
+            <Link to="home" className='logo' >campus<span>vent</span></Link>
             <nav className='nav-options'>
                 <ul class="navbar">
                     <li className="nav-item">
                         <FaHome className='nav-icon' />
-                        <a href="#home" class="item-link">Home</a>
+                        <Link to="home" class="item-link">Home</Link>
                     </li>
                     <li className="nav-item">
                         <BsFillBookmarkPlusFill className='nav-icon' />
-                        <a href="#bookmark" className="item-link">Bookmark</a>
+                        <Link to="bookmark" className="item-link">Bookmark</Link>
                     </li>
                     <li className="nav-item">
                         <HiOutlineTicket className='nav-icon' />
-                        <a href="#ticket" className="item-link">Notification</a>
+                        <Link to="ticket" className="item-link">Notification</Link>
                     </li>
                     <li className="nav-item">
                         <CgMoreO className='nav-icon' />
-                        <a href="#ticket" className="item-link">Notification</a>
+                        <Link to="ticket" className="item-link">Notification</Link>
                     </li>
-                    <a href="#create" className="create-btn"><HiPencil className='create-icon' /><div className="text">Create Event</div></a>
+                    <Link to="create" className="create-btn"><HiPencil className='create-icon' /><div className="text">Create Event</div></Link>
                 </ul>
-                <a href="#profile" className="profile-btn">
+                <Link to="profile" className="profile-btn">
                     <div className="profile-info">
                         <img src={ProfilePic} alt="" className="profile-img" width="35" height="35"/>
                         <div>
@@ -43,7 +44,7 @@ const Sidebar = () => {
                     <div className="option-icon">
                         <CgMoreAlt className='icon'/>
                     </div>
-                </a>
+                </Link>
             </nav>
 
             {/* <div className='nav-profile'>

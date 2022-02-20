@@ -5,7 +5,9 @@
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.4.2",
     "@mui/material": "^5.2.8",
+    "@mui/styles": "^5.4.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -13,6 +15,7 @@
     "react": "^17.0.2",
     "react-cssfx-loading": "^1.0.3",
     "react-dom": "^17.0.2",
+    "react-google-login": "^5.2.2",
     "react-icons": "^4.3.1",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
