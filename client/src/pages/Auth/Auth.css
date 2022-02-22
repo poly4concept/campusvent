@@ -1,0 +1,68 @@
+.header-text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 40vh;
+    padding-left: 20vw;
+    color: var(--black);
+}
+.header-text h2{
+    font-size: 55px;
+    font-weight: bold;
+    text-align: left;
+}
+.header-text h5{
+    font-size: 28px;
+    line-height: 32px;
+    text-align: left;
+}
+.form-paper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 30px;
+    height: auto;
+}
+.actions-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.forget-password{
+    text-align: center;
+    color: var(--orange) !important;
+    text-decoration: none !important;
+    margin-bottom: 5px !important;
+}
+.google-auth{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 0;
+    font-weight: 600;
+    color: #3D64ff;
+    padding-left: 20px;
+}
+.google-auth:hover{
+    background-color: rgba(128, 128, 128, 0.164);
+}
+.google-auth .google-icon{
+    font-size: 25px;
+    margin-right: 15px;
+}
+.switch-link{
+    text-decoration: none !important;
+    padding-left: 20px !important;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 10px 0;
+}
+.switch-link:hover{
+    background-color: rgba(128, 128, 128, 0.164);
+}
+@media screen and (max-width: 1200px){
+    .header-text{
+        display: none;
+    }
+}

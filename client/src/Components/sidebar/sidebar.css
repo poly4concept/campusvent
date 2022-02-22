@@ -15,7 +15,6 @@
 .logo{
     text-decoration: none;
     color: black;
-    background-color: blue;
 }
 .logo span{
   color: var(--orange);
@@ -114,8 +113,8 @@ a.profile-btn {
   align-items: center;
 }
 
-img.profile-img {
-  border-radius: 50%;
+.avatar {
+  /* border-radius: 50%; */
   margin-right: 10px;
 }
 
