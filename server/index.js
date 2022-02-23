@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors"
 import eventsRoutes from "./routes/events.js";
+import usersRoutes from "./routes/users.js";
 import dotenv from 'dotenv'
 
 
@@ -13,6 +14,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }))
 app.use(cors())
 
 app.use('/events', eventsRoutes)
+app.use('/users', usersRoutes)
 
 app.get('/', (req, res) => {
     res.send('hello to campusvent API')

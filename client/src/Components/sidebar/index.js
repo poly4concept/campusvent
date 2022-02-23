@@ -9,7 +9,8 @@ import { HiPencil } from "react-icons/hi";
 import { Link } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import { useDispatch } from 'react-redux';
-import { useNavigate  } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { LOG_OUT } from '../../constants/actionTypes';
 import './sidebar.css'
 // import ProfilePic from './poly4 logo.png'
 
@@ -23,7 +24,7 @@ const Sidebar = () => {
     const navigate = useNavigate()
 
     const handleLogOut = () => {
-        dispatch({ type: 'LOG_OUT' });
+        dispatch({ type: LOG_OUT });
         navigate('/')
         setUser(null)
     }
@@ -77,10 +78,10 @@ const Sidebar = () => {
                 </ul>
                 <a href='#k' onClick={handleProfileMenuOpen} className="profile-btn">
                     <div className="profile-info">
-                        <Avatar className='avatar' src={user?.result.imageUrl} alt={user?.result.name}>{user?.result.name }</Avatar>
+                        <Avatar className='avatar' src={user?.result?.imageUrl} alt={user?.result?.familyName}>{user?.result?.givenName.charAt(0) }</Avatar>
                         <div>
-                        <p className="name">{user?.result.familyName}</p>
-                            <p className="username">{`@${user?.result.givenName}`}</p>
+                        <p className="name">{user?.result.givenName}</p>
+                            <p className="username">{`@${user?.result?.familyName}`}</p>
                         </div>
                     </div>
                     <div className="option-icon">

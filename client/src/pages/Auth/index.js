@@ -13,7 +13,9 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { FcGoogle } from "react-icons/fc";
 import { GoogleLogin } from 'react-google-login'
 import { useDispatch } from 'react-redux';
-import { useNavigate  } from 'react-router-dom'
+import { signin, signup } from '../../actions/auth';
+import { useNavigate } from 'react-router-dom'
+import { AUTH } from '../../constants/actionTypes';
 import Input from './Input';
 import './Auth.css'
 
@@ -29,7 +31,11 @@ const SignUpButton = styled(Button)(({ theme }) => ({
   },
 }));
 
+const initialState = { firstName: '', lastName: '', email: '', password: '', };
+
+
 export default function Auth() {
+  const [form, setForm] = useState(initialState);
   const [showPassword, setShowPassword] = useState(false);
   const [isSignup, setIsSignUp] = useState(false)
   const dispatch = useDispatch();
@@ -38,16 +44,21 @@ export default function Auth() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    if (isSignup) {
+      dispatch(signup(form, navigate));
+    } else {
+      dispatch(signin(form, navigate));
+    }
+    // const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
   };
-  const handleChange = (e) => {}
+  const handleChange = (e) => {setForm({ ...form, [e.target.name]: e.target.value })}
   const handleShowPassword = () => {setShowPassword(!showPassword)}
   const googleSuccess = async (res) => {
       const result = res?.profileObj;
       const token = res?.tokenId;
       try {
-          dispatch({ type: 'AUTH', data: { result, token } })
+          dispatch({ type: AUTH, payload: { result, token } })
           navigate('/home')
           console.log(res)
       } catch (error) {
@@ -90,7 +101,6 @@ export default function Auth() {
                 )}
                 <Input name="email" label="Email Address" handleChange={handleChange} type="email" />
                 <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
-                { isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" /> }
               </Grid>
               <Box className='actions-box'>
                 <SignUpButton type="submit" fullWidth variant="contained" >{ isSignup ? 'Create Account' : 'Log in' }</SignUpButton>
