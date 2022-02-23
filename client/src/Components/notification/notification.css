@@ -109,3 +109,9 @@
         flex: 0.3;
     }
 }
+/* small screen */
+@media screen and (max-width:500px){
+    .notification{
+        display: none;
+    }
+}

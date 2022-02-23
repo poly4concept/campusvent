@@ -6,3 +6,28 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.mobile-header{
+    display: none !important;
+    margin-top: 10px;
+    display: flex ;
+    align-items: center;
+    background-color: white;
+}
+.mobile-header h1{
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+
+@media screen and (max-width:500px){
+    .home{
+        flex-direction: column;
+    }
+    .mobile-header{
+        display: flex !important;
+    }
+    .home-logo{
+        margin: 0;
+    }
+}

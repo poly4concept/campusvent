@@ -67,3 +67,17 @@
         flex: 0.5;
     }
 }
+
+@media screen and (max-width:500px){
+    .feed{
+        flex: 1;
+        border: none;
+    }
+    .feed-options {
+        margin: 0;
+    }
+    .events-div{
+        width: 95vw;
+        margin: 2rem auto;
+    }
+}

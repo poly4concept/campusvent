@@ -72,7 +72,7 @@ const Sidebar = () => {
                     </li>
                     <li className="nav-item">
                         <CgMoreO className='nav-icon' />
-                        <Link to="ticket" className="item-link">Notification</Link>
+                        <Link to="ticket" className="item-link">More</Link>
                     </li>
                     <Link to="create" className="create-btn"><HiPencil className='create-icon' /><div className="text">Create Event</div></Link>
                 </ul>

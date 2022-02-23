@@ -138,7 +138,7 @@ a.profile-btn {
 
 /*medium screen*/
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 768px) and (max-width: 1200px) {
   .sidebar{
     align-items: flex-start;
   }
@@ -186,4 +186,10 @@ a.profile-btn {
     width: 55px;
     justify-content: flex-end;
   }
+}
+
+@media screen and (max-width:500px){
+    .sidebar{
+        display: none;
+    }
 }

@@ -38,6 +38,9 @@ export const createEvent = async (req, res) => {
 
 export const bookmarkEvent = async (req, res) => { 
     const { id } = req.params
+    if (!req.userId) {
+        return res.json({ message: "Unauthenticated" });
+      }
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No event with id: ${id}`);
     const event = await eventFormat.findById(id)
     const updatedEvent = await eventFormat.findByIdAndUpdate(id, { bookmarked: !event.bookmarked }, { new: true });

@@ -16,7 +16,7 @@
 .event-card .event-img img{
     width: 100%;
     border-radius: 15px;
-    height: 7rem;
+    height: 100%;
 }
 .event-card .event-info{
     width: 50%;
@@ -78,4 +78,15 @@
     font-size: 18px;
     font-weight: 600;
     color: var(--pink);
+}
+
+@media screen and (max-width:500px){
+    .event-card{
+        padding: 10px;
+    }
+    .event-card .event-img img{
+        width: 90%;
+        height: 5rem;
+        /* transform: scale(0.8); */
+    }
 }
