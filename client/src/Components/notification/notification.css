@@ -106,7 +106,8 @@
 /* medium screen */
 @media screen and (max-width: 1200px) {
     .notification{
-        flex: 0.3;
+        /* flex: 0.3; */
+        display: none;
     }
 }
 /* small screen */

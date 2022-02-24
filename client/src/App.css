@@ -2,6 +2,7 @@
 
 .App {
   font-family: 'Montserrat', sans-serif;
+  font-display: swap;
 }
 @media screen and (max-width: 1200px) {
   .App{
