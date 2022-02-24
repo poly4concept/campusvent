@@ -6,6 +6,8 @@
 
 ## Project Description
 campusvent is a social media app that connects students with events going on in their campus. 
+
+
 As a user, you will be able to 
 - Discover great events in your campus just by scrolling your feed
 - Create your own events and sell tickets
