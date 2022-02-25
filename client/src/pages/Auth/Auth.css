@@ -57,6 +57,7 @@
     font-weight: 600;
     cursor: pointer;
     padding: 10px 0;
+    color: #3D64ff;
 }
 .switch-link:hover{
     background-color: rgba(128, 128, 128, 0.164);

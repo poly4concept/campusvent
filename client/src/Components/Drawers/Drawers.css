@@ -1,0 +1,7 @@
+.profile-drawer{
+    display: flex;
+    flex-direction: column ;
+}
+.log-out{
+    /* justify-self: center; */
+}

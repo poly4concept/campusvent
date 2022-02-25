@@ -68,7 +68,6 @@ export default function Auth() {
 
     const googleError  = (error) => {
         console.log(error);
-        console.log('unsuccesful');
     }
 
   const switchMode = () => {

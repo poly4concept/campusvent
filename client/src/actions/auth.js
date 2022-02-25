@@ -1,4 +1,4 @@
-import { AUTH } from '../constants/actionTypes';
+import { AUTH, ERROR } from '../constants/actionTypes';
 import { signIn, signUp } from '../api/index'
 
 
@@ -9,6 +9,7 @@ export const signin = (form, navigate) => async (dispatch) => {
         navigate('/home')
     } catch (error) {
         console.log(error);
+        dispatch({ type: ERROR, payload: error.response.data.message})
     }
 }
 export const signup = (form, navigate) => async (dispatch) => {
@@ -18,5 +19,6 @@ export const signup = (form, navigate) => async (dispatch) => {
         navigate('/home')
     } catch (error) {
         console.log(error);
+        dispatch({ type: ERROR, payload: error.response.data.message})
     }
 }

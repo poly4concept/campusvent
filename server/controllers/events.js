@@ -8,7 +8,7 @@ export const getEvents = async (req, res, next) => {
             const events = await eventFormat.find()
             
             // console.log(filters);
-            if (filters.length > 0) {
+           if (filters.length > 0) {
                 const filteredEvents = events.filter(event => {
                     let isValid = true;
                     for ( key in filters) {
@@ -18,12 +18,13 @@ export const getEvents = async (req, res, next) => {
                 })
                 res.status(200).json(filteredEvents)
             }              
-                res.status(200).json(events)
+        res.status(200).json(events)
             
 
                 
         } catch (error) {
-                res.status(404).json(error)
+                res.status(404).json({ error, message: "Something went wrong" })
+                console.log(error);
         }
 }
 

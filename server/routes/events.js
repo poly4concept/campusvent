@@ -6,6 +6,6 @@ const router = express.Router()
 router.get('/', getEvents)
 // router.get('/', quSearch)
 router.post('/', auth, createEvent)
-router.patch('/:id/bookmarkEvent', bookmarkEvent)
+router.patch('/:id/bookmarkEvent', auth, bookmarkEvent)
 
 export default router;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { MdOpenInNew } from "react-icons/md";
 import { BsBookmark, BsFillBookmarkFill } from "react-icons/bs";
 import './eventCard.css' 
@@ -9,6 +9,9 @@ const EventCard = ({ item }) => {
     const dispatch = useDispatch()   
     const { title, message, eventTime, ticketPrice, eventImage, bookmarked } = item;
 
+    const handleBookmark = () => {
+        dispatch(bookmark(item._id))
+    }
 
     return (
         <div className='event-card'>
@@ -23,11 +26,8 @@ const EventCard = ({ item }) => {
             <div className='event-extras'>
                 <div className='icons'>
                     <MdOpenInNew className='icon' />
-                    <div className='bookmark-container' onClick={() => {
-                            dispatch(bookmark(item._id),
-                            )
-                        }} >          
-                        {bookmarked ? <BsFillBookmarkFill className='bookmark' color='#df861d'/> : <BsBookmark  className='bookmark' /> }
+                    <div className='bookmark-container' onClick={handleBookmark} >          
+                        {bookmarked  ? <BsFillBookmarkFill className='bookmark' color='#df861d'/> : <BsBookmark  className='bookmark' /> }
                     </div>
                 </div>
                 <p className='event-time'> {eventTime}am</p>
