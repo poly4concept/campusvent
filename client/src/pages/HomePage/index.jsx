@@ -13,7 +13,6 @@ const HomePage = () => {
     const user = JSON.parse(localStorage.getItem("profile"))
 
     const handleOpenProfileInfo = () => {
-        console.log('ijs');
         setOpenProfileInfo(true)
     }
     const handleCloseProfileInfo = () => {
