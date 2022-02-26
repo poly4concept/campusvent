@@ -5,6 +5,8 @@ import { Provider } from 'react-redux'
 import reducers from './reducers'
 import { compose, createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
+import { AuthProvider } from './context/AuthProvider';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
 
@@ -12,7 +14,13 @@ const store = createStore(reducers, compose(applyMiddleware(thunk)))
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
-      <App />
+      <BrowserRouter>
+        <AuthProvider>
+          <Routes>
+            <Route path="/*" element={<App />} />
+          </Routes>
+        </AuthProvider>
+      </BrowserRouter>
     </React.StrictMode>
   </Provider>,
   document.getElementById('root')

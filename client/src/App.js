@@ -1,11 +1,12 @@
 import './App.css';
-import React, { useEffect, Suspense, useState } from 'react'
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import React, { useEffect } from 'react'
+import { Routes, Route } from "react-router-dom";
+import {  toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import { getEvents } from './actions/events';
-import Loading from './Components/loading'
+// import Loading from './Components/loading'
+import Layout from './pages/Layout'
+import RequireAuth from './pages/RequireAuth';
 
 
 //pages
@@ -15,19 +16,12 @@ const AuthPage = React.lazy(() => import('./pages/Auth'))
 
 function App() {
   const errorMessage = useSelector(state => state.error.errorMessage)
-  const userd = useSelector(state => state.auth)
-    console.log(errorMessage, userd);
-  // if (errorMessage) {   
-  // }
-  const user = JSON.parse(localStorage.getItem('profile'))
-  // const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")))
   const dispatch = useDispatch()
-  // const navigate = useNavigate()
 
   const errorToast = () => {
       toast.error(errorMessage, {
       position: "top-right",
-      autoClose: 3000,
+      autoClose: 2500,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -41,19 +35,16 @@ function App() {
     errorToast()
   }, [dispatch, errorMessage])
 
-  return (
-    <div className="App">
-      <Suspense  fallback={<Loading/>}>
-        <BrowserRouter>
-          <ToastContainer />  
+  return ( 
           <Routes>
-            <Route path="/" element={<AuthPage/>} />
-            <Route path="/home" element={<HomePage />} />
-            <Route path="create" element={<CreatePage />} />
+            <Route path="/" element={<Layout />}>
+              <Route path="/" element={<AuthPage />} />
+              <Route element={<RequireAuth />}>
+                    <Route path="/home" element={<HomePage />} />
+                    <Route path="create" element={<CreatePage />} />
+              </Route>
+            </Route>
           </Routes>
-        </BrowserRouter>
-      </Suspense>
-    </div>
   );
 }
 
