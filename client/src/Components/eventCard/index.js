@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { MdOpenInNew } from "react-icons/md";
 import { BsBookmark, BsFillBookmarkFill } from "react-icons/bs";
 import './eventCard.css' 
@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 
 const EventCard = ({ item }) => {
     const dispatch = useDispatch()   
-    const { title, message, eventTime, ticketPrice, eventImage, bookmarked } = item;
+    const { title, message, date, time, price, image, bookmarked } = item;
 
     const handleBookmark = () => {
         dispatch(bookmark(item._id))
@@ -16,10 +16,10 @@ const EventCard = ({ item }) => {
     return (
         <div className='event-card'>
             <div className='event-img'>
-                <img src={eventImage} alt='' />
+                <img src={image} alt='event' />
             </div>
             <div className='event-info'>
-                <span className='event-date'>Fri, July 25, 2021</span>
+                <span className='event-date'>{date}</span>
                 <span className='event-title'>{ title }</span>
                 <span className='event-message'> {message} </span>
             </div>
@@ -30,8 +30,8 @@ const EventCard = ({ item }) => {
                         {bookmarked  ? <BsFillBookmarkFill className='bookmark' color='#df861d'/> : <BsBookmark  className='bookmark' /> }
                     </div>
                 </div>
-                <p className='event-time'> {eventTime}am</p>
-                <p className='event-price'>{ticketPrice === 0 ? `Free` : `$ ${ticketPrice}`}</p> 
+                <p className='event-time'> {time}</p>
+                <p className='event-price'>{price === '' ? `Free` : `$ ${price}`}</p> 
             </div>
         </div>
     )

@@ -1,6 +1,12 @@
 .notification{
-    flex: 0.25;
+    /* flex: 0.25; */
+    width: 25vw;
     margin: 2rem 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: 100vh;
     /* padding: 2rem; */
 }
 .notification-container{

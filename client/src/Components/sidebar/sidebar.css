@@ -1,9 +1,14 @@
 .sidebar{
-    flex: 0.2;
+    /* flex: 0.2; */
+    width: 20vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
     overflow-y : hidden;
 }
 .nav-logo{
@@ -189,7 +194,7 @@ a.profile-btn {
 }
 
 @media screen and (max-width:500px){
-    .sidebar{
+    /* .nav-options{
         display: none;
-    }
+    } */
 }

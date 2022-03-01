@@ -13,6 +13,7 @@ import RequireAuth from './pages/RequireAuth';
 const HomePage = React.lazy(() => import('./pages/HomePage'))
 const CreatePage = React.lazy(() => import('./pages/createEvent'))
 const AuthPage = React.lazy(() => import('./pages/Auth'))
+const BookmarkPage = React.lazy(() => import('./pages/bookmark'))
 
 function App() {
   const errorMessage = useSelector(state => state.error.errorMessage)
@@ -41,7 +42,8 @@ function App() {
               <Route path="/" element={<AuthPage />} />
               <Route element={<RequireAuth />}>
                     <Route path="/home" element={<HomePage />} />
-                    <Route path="create" element={<CreatePage />} />
+                    <Route path="/create" element={<CreatePage />} />
+                    <Route path="/bookmark" element={<BookmarkPage />} />
               </Route>
             </Route>
           </Routes>

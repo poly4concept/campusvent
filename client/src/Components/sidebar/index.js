@@ -11,9 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
 import { LOG_OUT } from '../../constants/actionTypes';
-
 import './sidebar.css'
-// import ProfilePic from './poly4 logo.png'
 
 
 const Sidebar = () => {
@@ -54,8 +52,8 @@ const Sidebar = () => {
 
 
     return (
-        <>
-            <div className='sidebar'>
+        <div style={{flex: 0.2}}>
+            <aside className='sidebar'>
                 <Link to="home" className='nav-logo logo' >campus<span>vent</span></Link>
                 <nav className='nav-options'>
                     <ul class="navbar">
@@ -65,7 +63,7 @@ const Sidebar = () => {
                         </li>
                         <li className="nav-item">
                             <BsFillBookmarkPlusFill className='nav-icon' />
-                            <Link to="bookmark" className="item-link">Bookmark</Link>
+                            <Link to="/bookmark" className="item-link">Bookmark</Link>
                         </li>
                         <li className="nav-item">
                             <HiOutlineTicket className='nav-icon' />
@@ -75,7 +73,7 @@ const Sidebar = () => {
                             <CgMoreO className='nav-icon' />
                             <Link to="ticket" className="item-link">More</Link>
                         </li>
-                        <Link to="create" className="create-btn"><HiPencil className='create-icon' /><div className="text">Create Event</div></Link>
+                        <Link to="/create" className="create-btn"><HiPencil className='create-icon' /><div className="text">Create Event</div></Link>
                     </ul>
                     <a href='#k' onClick={handleProfileMenuOpen} className="profile-btn">
                         <div className="profile-info">
@@ -100,8 +98,8 @@ const Sidebar = () => {
                         <p>olajuwonmubarak355@gmail.com</p>
                     </div>
                 </div> */}
-            </div>
-        </>
+            </aside>
+        </div>
     )
 }
 

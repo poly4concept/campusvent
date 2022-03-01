@@ -1,5 +1,5 @@
-import { FETCH_ALL, BOOKMARK, ERROR } from '../constants/actionTypes';
-import { fetchEvents, bookmarkEvent } from '../api/index'
+import { FETCH_ALL, BOOKMARK, ERROR, CREATE } from '../constants/actionTypes';
+import { fetchEvents, createEvents,  bookmarkEvent } from '../api/index'
 
 export const getEvents = () => async (dispatch) => {
     try {
@@ -11,10 +11,19 @@ export const getEvents = () => async (dispatch) => {
     }
 }
 
+export const createEvent = (createData, navigate ) => async (dispatch) => {
+    try {
+        const { data } = await createEvents(createData);
+        dispatch({ type: CREATE, payload: data})
+    } catch (error) {
+        console.log(error);
+        dispatch({ type: ERROR, payload: error.response.data.message})
+    }
+}
+
 export const bookmark = (id) => async (dispatch) => {
     try {
         const { data } = await bookmarkEvent(id)
-        console.log('her');
         dispatch({type: BOOKMARK, payload: data})
     } catch (error) {
         console.log(error)

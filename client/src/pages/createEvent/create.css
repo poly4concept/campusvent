@@ -1,0 +1,109 @@
+.create-page{
+    display: flex;
+}
+.create-container{
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+}
+.create-container h4{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+}
+.basic-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.textarea{
+    width: 34.5rem !important;
+    height: 12rem !important;
+    padding: 5px !important;
+    font-size: 14px  !important;
+    border-radius: 2px;
+}
+.textarea:focus{
+    outline: none;
+    border: 1px solid var(--orange) !important;
+}
+.file-input{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.upload-btn{
+    position: absolute;
+    width: 150px;
+}
+.contact-info{
+    margin-top: 50px;
+}
+.contact-info h4{
+    margin-bottom: -15px;
+}
+.create-container .create-btn{
+    width: 85px;
+    background-color: var(--orange);
+    border-radius: 5px;
+    color: white;
+    min-height: 48px;
+    padding: 10px 16px;
+    font-weight: 550;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.create-container .create-btn:hover{
+    background-color: transparent;
+    color: var(--orange);
+    border: 1px solid var(--orange);
+}
+.file-container{
+    display: flex;
+    flex-direction: column;
+}
+.file-container img{
+    margin-top: 5px;
+    height: 10rem;
+    width: 12rem;
+    /* transform: scale(0.5); */
+}
+.img-upload::-webkit-file-upload-button {
+    background-color: var(--orange);
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: 0;
+    min-height: 48px;
+    color: white;
+    cursor: pointer;
+}
+.img-upload::-webkit-file-upload-button:hover{
+    background-color: transparent;
+    color: var(--orange);
+    border: 1px solid var(--orange);
+}
+.ticket-header{
+    display: flex;
+    align-items: center;
+}
+.beta{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    background-color: #df851dc2;
+    padding: 3px 7px;
+    color: white;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+
+@media screen and (max-width: 1200px){
+    .create-container{
+        width: 93vw;
+        margin: 0 auto;
+    }
+}

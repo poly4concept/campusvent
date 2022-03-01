@@ -13,6 +13,7 @@ API.interceptors.request.use((req) => {
 });
 
 export const fetchEvents = () => API.get('/events');
+export const createEvents = (newEvent) => API.post('/events', newEvent);
 export const bookmarkEvent = (id) => API.patch(`/events/${id}/bookmarkEvent`)
 
 export const signIn = (form) => API.post('/users/signin', form);

@@ -19,8 +19,6 @@ export const getEvents = async (req, res, next) => {
                 res.status(200).json(filteredEvents)
             }              
         res.status(200).json(events)
-            
-
                 
         } catch (error) {
                 res.status(404).json({ error, message: "Something went wrong" })
@@ -33,10 +31,9 @@ export const createEvent = async (req, res) => {
     const newEvent = eventFormat(event)
     try {
         await newEvent.save()
-        console.log('controller')
         res.status(201).json(newEvent)
     } catch (error) {
-        res.status(409).json(error)
+        res.status(409).json({ error, message: "Something went wrong" })
     }
 }
 

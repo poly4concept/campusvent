@@ -1,0 +1,24 @@
+.bookmark-container{
+    display: flex;
+    align-items: flex-start;
+}
+.bookmarks{
+    flex: 0.8; 
+    display: flex;
+    flex-direction: column;
+}
+.bookmarks-div{
+    width: 45em;
+    margin-left: -2.5em;
+}
+
+@media screen and (max-width: 1200px){
+    .bookmark-container{
+        flex-direction: column;
+    }
+    .bookmarks-div{
+        width: 95vw;
+        margin-left: 0;
+        margin: 0 auto;
+    }
+}
