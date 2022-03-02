@@ -63,11 +63,10 @@
     display: flex;
     flex-direction: column;
 }
-.file-container img{
+.upload-img-div{
     margin-top: 5px;
-    height: 10rem;
-    width: 12rem;
-    /* transform: scale(0.5); */
+    width: 300;
+    height: 300;
 }
 .img-upload::-webkit-file-upload-button {
     background-color: var(--orange);
@@ -105,5 +104,8 @@
     .create-container{
         width: 93vw;
         margin: 0 auto;
+    }
+    .create-container h2{
+        display: none;
     }
 }

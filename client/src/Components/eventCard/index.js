@@ -1,4 +1,5 @@
 import React from 'react'
+import Resizer from "react-image-file-resizer";
 import { MdOpenInNew } from "react-icons/md";
 import { BsBookmark, BsFillBookmarkFill } from "react-icons/bs";
 import './eventCard.css' 
@@ -8,6 +9,11 @@ import { useDispatch } from 'react-redux';
 const EventCard = ({ item }) => {
     const dispatch = useDispatch()   
     const { title, message, date, time, price, image, bookmarked } = item;
+
+    const resizeFile = (file) =>
+        new Promise((resolve) => {
+            Resizer.imageFileResizer( file, 300, 200, "WEBP", 100, 0, (uri) => { resolve(uri); }, "base64" );
+    });
 
     const handleBookmark = () => {
         dispatch(bookmark(item._id))

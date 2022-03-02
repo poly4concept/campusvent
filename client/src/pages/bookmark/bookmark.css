@@ -11,6 +11,18 @@
     width: 45em;
     margin-left: -2.5em;
 }
+.mobile-header{
+    display: none !important;
+    margin-top: 10px;
+    display: flex ;
+    align-items: center;
+    background-color: white;
+}
+.mobile-header h1{
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+}
 
 @media screen and (max-width: 1200px){
     .bookmark-container{
@@ -20,5 +32,11 @@
         width: 95vw;
         margin-left: 0;
         margin: 0 auto;
+    }
+    .bookmarks h2{
+        display: none;
+    }
+    .mobile-header{
+        display: flex !important;
     }
 }

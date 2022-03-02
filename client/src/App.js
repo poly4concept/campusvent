@@ -11,7 +11,7 @@ import RequireAuth from './pages/RequireAuth';
 
 //pages
 const HomePage = React.lazy(() => import('./pages/HomePage'))
-const CreatePage = React.lazy(() => import('./pages/createEvent'))
+const CreatePage = React.lazy(() => import('./pages/createEvent/Index'))
 const AuthPage = React.lazy(() => import('./pages/Auth'))
 const BookmarkPage = React.lazy(() => import('./pages/bookmark'))
 

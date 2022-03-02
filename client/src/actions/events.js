@@ -14,7 +14,8 @@ export const getEvents = () => async (dispatch) => {
 export const createEvent = (createData, navigate ) => async (dispatch) => {
     try {
         const { data } = await createEvents(createData);
-        dispatch({ type: CREATE, payload: data})
+        dispatch({ type: CREATE, payload: data })
+        navigate('/home')
     } catch (error) {
         console.log(error);
         dispatch({ type: ERROR, payload: error.response.data.message})

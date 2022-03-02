@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Box from '@mui/material/Box'
-import Sidebar from '../../Components/sidebar';
 import Avatar from '@mui/material/Avatar';
+import Sidebar from '../../Components/sidebar';
 import Feed from '../../Components/feed';
 import Notification from '../../Components/notification';
 import ProfileDrawer from '../../Components/Drawers/ProfileDrawer'

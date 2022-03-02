@@ -1,6 +1,8 @@
 import React,{useState} from 'react'
+import Resizer from "react-image-file-resizer";
+import Box from '@mui/material/Box'
+import Avatar from '@mui/material/Avatar';
 import { styled } from '@mui/material/styles';
-import FileBase from 'react-file-base64';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
@@ -14,6 +16,7 @@ import { createEvent } from '../../actions/events';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
 import Sidebar from '../../Components/sidebar'
+import ProfileDrawer from '../../Components/Drawers/ProfileDrawer'
 import './create.css'
 
 
@@ -42,17 +45,40 @@ export const CreateTextField = styled(TextField)(({ theme }) => ({
         },
 }))
 const CreatePage = () => {
+    const user = JSON.parse(localStorage.getItem("profile"))
     const [category, setCategory] = React.useState('');
     const [dateValue, setDateValue] = React.useState(new Date());
     const [timeValue, setTimeValue] = React.useState(new Date(null));
+    const [openProfileInfo, setOpenProfileInfo] = useState(false);
     const [createData, setCreateData] = useState({ organizer: '', contact: '', title: '', category: '', message: '', image: '', date: '', time: '', price: '' })
     const [checked, setChecked] = React.useState(true);
+    const [resizedImg, setResizedImg] = useState(undefined)
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    const handleOpenProfileInfo = () => {
+        setOpenProfileInfo(true)
+    }
+    const handleCloseProfileInfo = () => {
+        setOpenProfileInfo(false)
+    }
 
-    
+    const resizeFile = (file) =>
+        new Promise((resolve) => {
+            Resizer.imageFileResizer( file, 300, 200, "WEBP", 100, 0, (uri) => { resolve(uri); }, "base64" );
+    });
+
+    const onUploadFile = async (event) => {
+        try {
+            const file = event.target.files[0];
+            const image = await resizeFile(file);
+            setResizedImg(image)
+            setCreateData({ ...createData, image: image })
+        } catch (err) {
+            console.log(err);
+        }
+    };
     
     const handleChange = (event) => {
         setChecked(event.target.checked);
@@ -62,27 +88,35 @@ const CreatePage = () => {
         setCategory(event.target.value);
         setCreateData({...createData, category: event.target.value})
     };
+
     const handleDateChange = (value) => {
         setDateValue(value)
         const date = value.toDateString()
         setCreateData({...createData, date})
     }
+
     const handleTimeChange = (value) => {
         setTimeValue(value)
         const time = value.toTimeString().split(' ')[0].split(':').splice(0,2).join(':')
         setCreateData({...createData, time})
     }
+
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(createData);
         dispatch(createEvent(createData, navigate))
         setCreateData({ organizer: '', contact: '', title: '', category: '', message: '', image: '', date: '', time: '', price: '' })
-        navigate('/home')
     }
 
 
 
     return (
+        <>
+        <ProfileDrawer openState={openProfileInfo} openDrawer={handleOpenProfileInfo} closeDrawer={handleCloseProfileInfo} />
+        <Box className='mobile-header'>
+                <Avatar  onClick={handleOpenProfileInfo} className='avatar' src={user?.result?.imageUrl} alt={user?.result?.familyName}>{user?.result?.givenName.charAt(0)}</Avatar>
+                <h1>Create Event</h1>
+        </Box>
         <div className='create-page'>
             <Sidebar/>
             <div className="create-container">
@@ -99,11 +133,11 @@ const CreatePage = () => {
                             ))}
                         </CreateTextField>
                         <CreateTextField  required onChange={(e) =>  setCreateData({...createData, message: e.target.value})} label="Events Description" multiline rows={8} />
-                        
-                        <div className='file-container'>
-                            <FileBase  multiple={false}  onDone={({ base64 })=> setCreateData({...createData, image: base64  })} />
-                            {createData.image &&  <img src={createData.image} alt='upload preview' /> }
+                        <input className='img-upload' type="file" accept="image/*" onChange={onUploadFile} />
+                        <div className="upload-img-div">
+                            {resizedImg && <img alt="event poster" src={resizedImg} />}
                         </div>
+                            
                     </div>
                     <div className="contact-info">
                         <h4>Organizer's Contact</h4>
@@ -135,7 +169,8 @@ const CreatePage = () => {
                     <button type='submit' className='create-btn'>Submit</button>
                 </form>
             </div>
-        </div>
+            </div> 
+        </>
     )
 }
 
