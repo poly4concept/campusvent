@@ -34,7 +34,7 @@ const EventCard = ({ item }) => {
     <div className="event-card">
       <div className="event-img">
         <img src={image} alt="event" />
-      </div>
+      </div> 
       <div className="event-info">
         <span className="event-date">{date}</span>
         <span className="event-title">{title}</span>

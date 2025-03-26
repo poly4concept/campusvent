@@ -153,7 +153,7 @@ const CreatePage = () => {
                         </div>
                         <FormControlLabel control={<Switch color='warning' checked={checked} onChange={handleChange}   inputProps={{ 'aria-label': 'controlled' }} />} label="Free" />
                         <Stack direction="row" spacing={3} sx={{mt: 2}}>
-                            <CreateTextField onChange={(e) =>  setCreateData({...createData, price: e.target.value})} disabled={checked} sx={{width: '20vw'}} label="Price($)" />
+                            <CreateTextField onChange={(e) =>  setCreateData({...createData, price: e.target.value})} disabled={checked} sx={{width: '20vw'}} label="Price(₦)" />
                             <CreateTextField type="number" required sx={{width: '20vw'}} label="Available quantity" />
                         </Stack>
                     </div>

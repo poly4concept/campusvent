@@ -10,7 +10,6 @@ import { useSelector } from 'react-redux';
 
 const Feed = () => {
     const events = useSelector(state => state.events)
-    console.log(events);
 
     return (
         <div className='feed'>

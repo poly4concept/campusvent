@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const API = axios.create({ baseURL: 'http://localhost:5000' });
+const API = axios.create({ baseURL: 'https://campusvent.onrender.com' });
 // const url = 'https://campusvent.herokuapp.com'
 // const url = 'http://localhost:5000'
 
