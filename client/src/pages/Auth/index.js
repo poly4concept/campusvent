@@ -86,7 +86,7 @@ export default function Auth() {
             <Typography component='h5'>campusvent brings all your events to you on one social tab</Typography>
           </Box>
         </Grid>
-        <Grid item  xs={12} sm={8} md={6} component={Paper} elevation={0}  square>
+        <Grid item xs={12} sm={8} md={6} component={Paper} elevation={0}  square>
           <Paper className='form-paper' elevation={2} sx={{ width: {md: 0.7, xs: '1'}, my: {md:'8vh', xs: 0}, mx:{md:4, xs: 0},}}
           >
             <Typography component="h1" variant="h4">{ isSignup ? 'Sign up' : 'Sign in' }</Typography>

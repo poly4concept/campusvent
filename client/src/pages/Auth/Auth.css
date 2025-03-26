@@ -16,13 +16,16 @@
     line-height: 32px;
     text-align: left;
 }
-.form-paper{
+
+.form-paper {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;  /* Centers vertically */
     padding: 20px 30px;
-    height: auto;
+    height: 100vh;  /* Ensures full viewport height */
 }
+
 .actions-box{
     display: flex;
     flex-direction: column;
