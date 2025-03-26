@@ -1,42 +1,46 @@
-.bookmark-container{
-    display: flex;
-    align-items: flex-start;
+.bookmark-container {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
 }
-.bookmarks{
-    flex: 0.8; 
-    display: flex;
-    flex-direction: column;
+.bookmarks {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
 }
-.bookmarks-div{
-    width: 45em;
-    margin-left: -2.5em;
+.bookmark {
+  cursor: pointer;
 }
-.mobile-header{
-    display: none !important;
-    margin-top: 10px;
-    display: flex ;
-    align-items: center;
-    background-color: white;
+.bookmarks-div {
+  width: 45em;
+  margin-left: -2.5em;
 }
-.mobile-header h1{
-    font-size: 12px;
-    font-weight: 700;
-    text-align: center;
+.mobile-header {
+  display: none !important;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+.mobile-header h1 {
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
 }
 
-@media screen and (max-width: 1200px){
-    .bookmark-container{
-        flex-direction: column;
-    }
-    .bookmarks-div{
-        width: 95vw;
-        margin-left: 0;
-        margin: 0 auto;
-    }
-    .bookmarks h2{
-        display: none;
-    }
-    .mobile-header{
-        display: flex !important;
-    }
+@media screen and (max-width: 1200px) {
+  .bookmark-container {
+    flex-direction: column;
+  }
+  .bookmarks-div {
+    width: 95vw;
+    margin-left: 0;
+    margin: 0 auto;
+  }
+  .bookmarks h2 {
+    display: none;
+  }
+  .mobile-header {
+    display: flex !important;
+  }
 }

@@ -27,6 +27,7 @@ export const getEvents = async (req, res, next) => {
 }
 
 export const createEvent = async (req, res) => { 
+    
     const event = req.body
     const newEvent = eventFormat(event)
     try {

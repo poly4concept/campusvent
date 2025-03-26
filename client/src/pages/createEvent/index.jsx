@@ -5,10 +5,10 @@ import Avatar from '@mui/material/Avatar';
 import { styled } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import DatePicker  from '@mui/lab/DatePicker';
-import TimePicker from '@mui/lab/TimePicker';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import Stack from '@mui/material/Stack';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
@@ -22,6 +22,7 @@ import './create.css'
 
 const categories = [
   { value: 'school', label: 'School Activities'},
+  { value: 'tech', label: 'Technology'},
   { value: 'training', label: 'Training'},
   { value: 'politics', label: 'Political Event'},
   { value: 'religion', label: 'Religion and Spirituality'},

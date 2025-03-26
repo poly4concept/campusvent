@@ -4,9 +4,9 @@ import UserModal  from "../models/user.js";
 import dotenv from 'dotenv'
 
 
-// const secret = 'test';
 dotenv.config()
 const secret = process.env.JWT_SECRET
+// const secret = 'test';
 export const signIn = async (req, res) => {
         const {email, password} = req.body
         try {

@@ -1,18 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 .App {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-display: swap;
 }
 @media screen and (max-width: 1200px) {
-  .App{
+  .App {
     margin-left: 0;
   }
 }
-body{
+body {
   --orange: #df861d;
   --black: #3d3b3b;
   --small-black: #6d6969;
   --pink: #eb4283;
   --background-black: #f7f9f9;
+}
+
+.mobile-header {
+  display: none !important;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+.mobile-header h1 {
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .mobile-header {
+    display: flex !important;
+  }
 }
