@@ -21,7 +21,7 @@ function App() {
 
   const errorToast = () => {
     toast.error(errorMessage, {
-      position: "top-right",
+      position: "bottom-right",
       autoClose: 2500,
       hideProgressBar: false,
       closeOnClick: true,
